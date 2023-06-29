@@ -1,0 +1,47 @@
+@model IEnumerable<BTH626.Models.Sinhvien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.masinhvien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tensinhvien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.malop)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.masinhvien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tensinhvien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.malop)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.masinhvien">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.masinhvien">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.masinhvien">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
